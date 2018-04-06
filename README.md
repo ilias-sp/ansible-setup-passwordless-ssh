@@ -65,7 +65,7 @@ Last task in the playbook is to connect to each of those hosts and run some comm
 
 ---
 
-## What happens in the background to your machines when you run the playbook.
+## What happens in the background to your machines when you run the playbook
 
 By running this playbook, these things happen to your hosts:
 
