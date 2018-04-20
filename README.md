@@ -8,7 +8,9 @@ This Ansible Playbook will assist on establishing passwordless SSH logins with t
 
 Clone the repository to your ansible-enabled host:
 
-`git clone https://github.com/ilias-sp/ansible-setup-passwordless-ssh.git`
+```bash
+git clone https://github.com/ilias-sp/ansible-setup-passwordless-ssh.git
+```
 
 Alternatively, you can download the `ansible_setup_passwordless_ssh.yml` and `hosts` from this repository.
 
