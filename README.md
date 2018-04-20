@@ -20,6 +20,7 @@ Make sure your Ansible host is equipped with the utilities, and that they are av
 
 - ssh-keygen
 - ssh-copy-id
+- sshpass
 
 If you dont have them, before continuing you will have to install them using the recommended ways for your Linux distribution.
 
@@ -59,7 +60,9 @@ rhel-red
 
 ## How to run it
 
-`ansible-playbook -i hosts ansible_setup_passwordless_ssh.yml`
+```bash
+ansible-playbook -i hosts ansible_setup_passwordless_ssh.yml
+```
 
 Last task in the playbook is to connect to each of those hosts and run some commands ("hostname" and "id"), check the output to verify the success of the tool!
 
@@ -76,6 +79,6 @@ Localhost:
 - This SSH key is added to the ~/.ssh/config file for SSH client to utilize it when connecting to remote hosts.
 
 Remote hosts:
-- The generated SSH key is propagated to the list of remote hosts you configured in hosts inventory file, and added to their ~/.ssh/authorized_keys file. This is done using the ssh-copy-id linux utility that is meant for this job.
+- The generated SSH key is propagated to the list of remote hosts you configured in hosts inventory file, and added to their ~/.ssh/authorized_keys file. This is done using the `ssh-copy-id` linux utility that is meant for this job. `sshpass` linux utility is used to assist running the script without the need to prompt for user password.
 
 ---
