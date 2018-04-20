@@ -1,6 +1,6 @@
 ## Output from Demo Run
 
-```
+```bash
 [root@optima-ansible ansible-setup-passwordless-ssh]# cat hosts 
 [local_host]
 localhost

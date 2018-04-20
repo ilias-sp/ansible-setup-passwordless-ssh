@@ -84,3 +84,13 @@ Remote hosts:
 - The generated SSH key is propagated to the list of remote hosts you configured in hosts inventory file, and added to their ~/.ssh/authorized_keys file. This is done using the `ssh-copy-id` linux utility that is meant for this job. `sshpass` linux utility is used to assist running the script without the need to prompt for user password.
 
 ---
+
+## How to rollback
+
+run:
+
+```bash
+ansible-playbook -i hosts ansible_setup_passwordless_ssh_rollback.yml
+```
+
+[Output from Demo run of the rollback](demo/SampleRun_Rollback.md)
