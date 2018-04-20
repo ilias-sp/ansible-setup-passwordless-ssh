@@ -62,6 +62,8 @@ rhel-red
 
 ## How to run it
 
+run:
+
 ```bash
 ansible-playbook -i hosts ansible_setup_passwordless_ssh.yml
 ```
@@ -94,3 +96,6 @@ ansible-playbook -i hosts ansible_setup_passwordless_ssh_rollback.yml
 ```
 
 [Output from Demo run of the rollback](demo/SampleRun_Rollback.md)
+
+---
+
