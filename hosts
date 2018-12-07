@@ -8,5 +8,5 @@ remote_machine_password="xxxxxxxxxxxxxxxxxxxxxx"
 
 
 [ansible_setup_passwordless_setup_group]
-rhel-green
-rhel-red
+rhel-green ansible_port=22 ansible_user=root ansible_host=192.168.1.1
+rhel-red ansible_port=9022 ansible_user=root ansible_host=192.168.1.2
