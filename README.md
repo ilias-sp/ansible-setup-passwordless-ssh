@@ -37,6 +37,8 @@ Edit the `hosts` file and define your environment's information. Fill in using t
 | ssh_key_filename | the filename of the new SSH key to be generated and stored under your .ssh folder of your localhost. |
 | remote_machine_username | the username of the remote machines. If you are applying the procedure to multiple hosts. |
 | remote_machine_password | the password of the "remote_machine_username" remote machines. |
+| local_host -> ansible_user | user of your localhost |
+| local_host -> ansible_password | the password of your localhost's account |
 | [ansible_setup_passwordless_setup_group] | fill in the list of hosts that you want to establish the passwordless login with. |
 
 If you are planning to run the script towards multiple hosts, make sure the username/password you defined is the same to all of them!
@@ -51,7 +53,8 @@ localhost
 ssh_key_filename="ansible_rsa"
 remote_machine_username="root"
 remote_machine_password="root_password"
-
+ansible_user=username
+ansible_password=password
 
 [ansible_setup_passwordless_setup_group]
 rhel-green
