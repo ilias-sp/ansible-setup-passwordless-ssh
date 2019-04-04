@@ -75,11 +75,19 @@ Last task in the playbook is to connect to each of those hosts and run some comm
 
 [Output from Demo run](demo/SampleRun.md)
 
-To skip the pre_task that requires the user to confirm the execution of the playbooks, you can append in the command the `-e confirmation=YES` argument:
+
+## How to avoid the confirmation question.
+
+by design, the 2 playbooks ask for the user's confirmation before proceeding to the tasks. This is a common safety practice, giving the user one last chance to think if he is ready to proceed with this execution.
+Nevertheless, if this is an unwanted behavior that you want to bypass, you can:
+
+1. skip this pre_task, by appending in the command the `-e confirmation=YES` argument. For example:
 
 ```bash
 ansible-playbook -i hosts ansible_setup_passwordless_ssh.yml -e confirmation=YES
 ```
+
+2. use the playbooks that are stored in the `non_interactive` folder. They are just missing this "safety" check.
 
 ---
 
