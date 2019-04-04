@@ -75,6 +75,12 @@ Last task in the playbook is to connect to each of those hosts and run some comm
 
 [Output from Demo run](demo/SampleRun.md)
 
+To skip the pre_task that requires the user to confirm the execution of the playbooks, you can append in the command the `-e confirmation=YES` argument:
+
+```bash
+ansible-playbook -i hosts ansible_setup_passwordless_ssh.yml -e confirmation=YES
+```
+
 ---
 
 ## What happens in the background to your machines when you run the playbook
