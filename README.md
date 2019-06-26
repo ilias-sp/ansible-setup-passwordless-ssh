@@ -39,7 +39,7 @@ Edit the `hosts` file and define your environment's information. Fill in using t
 | remote_machine_password | the password of the "remote_machine_username" remote machines. |
 | local_host -> ansible_user | user of your localhost |
 | local_host -> ansible_password | the password of your localhost's account |
-| [ansible_setup_passwordless_setup_group] | fill in the list of hosts that you want to establish the passwordless login with. |
+| [ansible_setup_passwordless_setup_group] | fill in the list of hosts that you want to establish the passwordless login with. the `ansible_user` is used only when executing the `ansible_setup_passwordless_ssh_rollback` playbook and it should match the `remote_machine_username`. The `ansible_host` can be ommitted if local_host can resolve the hostname you defined in first column. the `ansible_port` variable should be present even if it has the default value of 22, else you will have to modify the relevant task in the playbook. |
 
 If you are planning to run the script towards multiple hosts, make sure the username/password you defined is the same to all of them!
 

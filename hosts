@@ -1,13 +1,13 @@
 [local_host]
-localhost
+localhost ansible_port=22 ansible_user=username ansible_password=password ansible_host=127.0.0.1
+
 
 [local_host:vars]
 ssh_key_filename="ansible_rsa"
 remote_machine_username="root"
 remote_machine_password="xxxxxxxxxxxxxxxxxxxxxx"
-ansible_user=username
-ansible_password=password
+
 
 [ansible_setup_passwordless_setup_group]
 rhel-green ansible_port=22 ansible_user=root ansible_host=192.168.1.1
-rhel-red ansible_port=9022 ansible_user=root ansible_host=192.168.1.2
+rhel-red   ansible_port=9022 ansible_user=root ansible_host=192.168.1.2
