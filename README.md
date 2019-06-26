@@ -34,11 +34,13 @@ Edit the `hosts` file and define your environment's information. Fill in using t
 
 | Name | Description |
 | ----------------------- | ---------------------------------------------- |
+| local_host -> ansible_user | user of your localhost |
+| local_host -> ansible_password | the password of your localhost's account |
+| local_host -> ansible_port | if your local_host has the SSH daemon running not on the default port (22) |
+| local_host -> ansible_host | if you want to define the IP of your local_host |
 | ssh_key_filename | the filename of the new SSH key to be generated and stored under your .ssh folder of your localhost. |
 | remote_machine_username | the username of the remote machines. If you are applying the procedure to multiple hosts. |
 | remote_machine_password | the password of the "remote_machine_username" remote machines. |
-| local_host -> ansible_user | user of your localhost |
-| local_host -> ansible_password | the password of your localhost's account |
 | [ansible_setup_passwordless_setup_group] | fill in the list of hosts that you want to establish the passwordless login with. the `ansible_user` is used only when executing the `ansible_setup_passwordless_ssh_rollback` playbook and it should match the `remote_machine_username`. The `ansible_host` can be ommitted if local_host can resolve the hostname you defined in first column. the `ansible_port` variable should be present even if it has the default value of 22, else you will have to modify the relevant task in the playbook. |
 
 If you are planning to run the script towards multiple hosts, make sure the username/password you defined is the same to all of them!
@@ -47,18 +49,18 @@ If you are planning to run the script towards multiple hosts, make sure the user
 
 ```
 [local_host]
-localhost
+localhost ansible_port=22 ansible_user=username ansible_password=password ansible_host=127.0.0.1
+
 
 [local_host:vars]
 ssh_key_filename="ansible_rsa"
 remote_machine_username="root"
-remote_machine_password="root_password"
-ansible_user=username
-ansible_password=password
+remote_machine_password="xxxxxxxxxxxxxxxxxxxxxx"
+
 
 [ansible_setup_passwordless_setup_group]
-rhel-green
-rhel-red
+rhel-green ansible_port=22 ansible_user=root ansible_host=192.168.1.1
+rhel-red   ansible_port=9022 ansible_user=root ansible_host=192.168.1.2
 ```
 
 ---
